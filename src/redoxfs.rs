@@ -22,7 +22,7 @@ impl RedoxFs {
     }
 
     //TODO: Confirm capabilities on other OSes
-    #[cfg(target_os = "linux")]
+    //#[cfg(target_os = "linux")]
     pub fn mount(&mut self) -> io::Result<()> {
         if self.mounted()? {
             return Err(io::Error::new(
@@ -51,7 +51,7 @@ impl RedoxFs {
     }
 
     //TODO: Confirm capabilities on other OSes
-    #[cfg(target_os = "linux")]
+    //#[cfg(target_os = "linux")]
     pub fn unmount(&mut self) -> io::Result<()> {
         if self.mounted()? {
             Command::new("fusermount")
@@ -72,7 +72,7 @@ impl RedoxFs {
     }
 
     //TODO: Confirm capabilities on other OSes
-    #[cfg(target_os = "linux")]
+    //#[cfg(target_os = "linux")]
     pub fn mounted(&self) -> io::Result<bool> {
         use proc_mounts::MountIter;
 

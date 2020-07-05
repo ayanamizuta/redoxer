@@ -11,7 +11,7 @@ mod toolchain;
 static TARGET: &'static str = "x86_64-unknown-redox";
 
 //TODO: Confirm capabilities on other OSes
-#[cfg(target_os = "linux")]
+//#[cfg(target_os = "linux")]
 fn installed(program: &str) -> io::Result<bool> {
     process::Command::new("which")
         .arg(program)
@@ -26,7 +26,7 @@ fn redoxer_dir() -> path::PathBuf {
 }
 
 //TODO: Confirm capabilities on other OSes
-#[cfg(target_os = "linux")]
+//#[cfg(target_os = "linux")]
 fn running(program: &str) -> io::Result<bool> {
     process::Command::new("pgrep")
         .arg(program)
